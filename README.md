@@ -6,7 +6,6 @@ This is a simple backend service for managing sales leads. It allows users to up
 
 - CSV file ingestion for loading sales leads.
 - RESTful API for retrieving and filtering sales leads.
-- Basic user authentication.
 - PostgreSQL database with a schema for leads and users.
 - Database migrations managed via Alembic.
 - Containerized deployment using Docker.
