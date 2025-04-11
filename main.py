@@ -59,7 +59,7 @@ async def delete_lead(lead_id: int, session: AsyncSession = Depends(get_session)
         raise HTTPException(status_code=404, detail="Lead not found")
     
     await session.delete(instance=lead)
-    session.commit()
+    await session.commit()
     return {"message": "Lead deleted successfully"}
 
 @app.put("/lead/{lead_id}")
@@ -84,5 +84,5 @@ async def create_lead(lead_data: LeadCreate, session: AsyncSession = Depends(get
     """
     lead = Lead(**lead_data.model_dump())
     session.add(lead)
-    session.commit()
+    await session.commit()
     return {"message": "Lead created successfully", "lead": lead}
