@@ -1,6 +1,6 @@
 # Sales Leads Manager
 
-This is a simple backend service for managing sales leads. It allows users to upload CSV files with lead data, which gets stored in a PostgreSQL database. The application is built with FastAPI for the API layer, uses Alembic for database migrations, and is containerized with Docker. User authentication is implemented with basic security in mind.
+This is a simple backend service for managing sales leads. It allows users to upload CSV files with lead data, which gets stored in a PostgreSQL database. The application is built with FastAPI for the API layer, uses Alembic for database migrations, and is containerized with Docker. User authentication has not been implemented yet.
 
 ## Key Features
 
