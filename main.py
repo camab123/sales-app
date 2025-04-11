@@ -71,10 +71,10 @@ async def update_lead(lead_id: int, lead_data: LeadUpdate, session: AsyncSession
     if not lead:
         raise HTTPException(status_code=404, detail="Lead not found")
     
-    for key, value in lead_data.model_dump().items():
+    for key, value in lead_data.model_dump(exclude_none=True).items():
         setattr(lead, key, value)
     
-    session.commit()
+    await session.commit()
     return {"message": "Lead updated successfully", "lead": lead}
 
 @app.post("/lead/")
